@@ -7,7 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Artwork.destroy_all
+ArtworkShare.destroy_all
 
 5.times do |i|
-    User.create!(username: "username#{i}")
+    u = User.create!(username: "username#{i}")
+    a = Artwork.create!(artist_id: u.id, title: "title#{i}", image_url: "url#{i}")
+    as = ArtworkShare.create!(viewer_id: u.id, artwork_id: a.id)
 end
