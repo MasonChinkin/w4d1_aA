@@ -9,5 +9,5 @@
 User.destroy_all
 
 5.times do |i|
-    User.create!(name: "name#{i}", email: "#{i}@gmail.com")
+    User.create!(username: "username#{i}")
 end
